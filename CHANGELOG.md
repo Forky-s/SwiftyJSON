@@ -4,6 +4,15 @@
 
 [Full Changelog](https://github.com/SwiftyJSON/SwiftyJSON/compare/2.2.0...HEAD)
 
+### Added
+- Swift 6 support with full Sendable conformance ([#1163](https://github.com/SwiftyJSON/SwiftyJSON/issues/1163))
+- Comprehensive concurrency tests for actor boundary validation
+
+### Changed
+- `JSON` struct conforms to `@unchecked Sendable`
+- `Type`, `SwiftyJSONError`, `JSONKey` enums conform to `Sendable`
+- Minimum Swift tools version updated to 6.0
+
 **Closed issues:**
 
 - 156 compiler errors Mavericks + Xcode 6.2 [\#220](https://github.com/SwiftyJSON/SwiftyJSON/issues/220)
