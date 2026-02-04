@@ -24,7 +24,7 @@ import Foundation
 
 // MARK: - Error
 // swiftlint:disable line_length
-public enum SwiftyJSONError: Int, Swift.Error {
+public enum SwiftyJSONError: Int, Swift.Error, Sendable {
     case unsupportedType = 999
     case indexOutOfBounds = 900
     case elementTooDeep = 902
@@ -67,7 +67,7 @@ JSON's type definitions.
 
 See http://www.json.org
 */
-public enum Type: Int {
+public enum Type: Int, Sendable {
 	case number
 	case string
 	case bool
@@ -79,7 +79,7 @@ public enum Type: Int {
 
 // MARK: - JSON Base
 
-public struct JSON {
+public struct JSON: @unchecked Sendable {
 
 	/**
 	 Creates a JSON using the data.
@@ -339,7 +339,7 @@ extension JSON: Swift.Collection {
 /**
  *  To mark both String and Int can be used in subscript.
  */
-public enum JSONKey {
+public enum JSONKey: Sendable {
     case index(Int)
     case key(String)
 }
